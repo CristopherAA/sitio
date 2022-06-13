@@ -4,12 +4,17 @@
         <title>Mi sitio web</title>
         <link href="estilos/estilos.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <script defer src="scripts/main.js"></script>
     </head>
     <body>
-        <h1> Bienvenidx a mi página web </h1>
-        <img src="imagenes/gato-pasto.jpg" alt="Gato corriendo en el pasto">
-        <p> Hola, bienvenidxs a todxs a mi primer página web, estoy muy entusiasmado</p>
-        <button>Cambiar usuario</button>
-        <script src="scripts/main.js"></script>
+        <h1> Juega adivina el número</h1>
+        <div class = "cuerpo">
+            <p>Hemos seleccionado un número aleatorio entre 1 y 100. Fíjate si lo puedes adivinar en 10 turnos o menos. Vamos a decirte si tu número es más alto o más bajo.</p>
+            <label>Adivina el número: </label>
+            <input type="number">
+            <button id="enviar">Enviar respuesta</button>
+            <p id="intentos"></p>
+            <p id ="resultado"></p>
+        </div> 
     </body>
 </html>
