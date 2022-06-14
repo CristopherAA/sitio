@@ -1,61 +1,35 @@
-var intentos = 0;
-var resetButton;
-var btnEnviar = document.querySelector('#enviar');
-var elegido = 50;
-var txtIntentos = document.querySelector('#intentos');
-var txtResultado = document.querySelector('#resultado');
-btnEnviar.onclick = function(){
-    if(intentos == 0){
-        iniciarJuego();
-    }
-    nuevoIntento();
-}
-function iniciarJuego(){
-    elegido = Math.floor(Math.random() *100) + 1;
-    txtIntentos.textContent = "Intentos anteriores: ";
-    txtResultado.textContent = "";
-    btnEnviar.disabled = false;
-    document.querySelector('input').disabled = false;
-    
-    if(resetButton != null){
-        resetButton.parentNode.removeChild(resetButton);
-    }
-}
-function nuevoIntento(){
-    txtResultado.textContent = "";
-    var actual = document.querySelector('input');
-    txtIntentos.textContent += actual.value + " ";
-    if(actual.value == elegido){
-        txtResultado.textContent = "Felicidades, ganaste";
-        txtResultado.style.backgroundColor = 'green';
-        txtResultado.style.color = 'white';
-        gameOver();
-    }else if(intentos >= 10){
-        txtResultado.textContent = "Te quedaste sin intentos";
-        txtResultado.style.backgroundColor = 'red';
-        txtResultado.style.color = 'white';
-        gameOver();
-    }else{
-        txtResultado.style.backgroundColor = 'red';
-        txtResultado.style.color = 'white';
-        txtResultado.textContent = "Incorrecto: ";
-        if(actual.value > elegido){
-            txtResultado.textContent += "Demasiado grande";
-        }else{
-            txtResultado.textContent += "Demasiado pequeño";
-        }
-    }
-    intentos++;
-    actual.value = "";
-}
-function gameOver(){
-    intentos = 0;
-    btnEnviar.disabled = true;
-    document.querySelector('input').disabled = true;
-    resetButton = document.createElement('button');
-    resetButton.textContent = 'Iniciar nuevo juego';
-    document.querySelector('.cuerpo').append(resetButton);
-    resetButton.addEventListener('click', iniciarJuego);
-}
+const html = document.querySelector('html');
+const productos = document.querySelector('.productos');
+const btnRegistrar = document.querySelector('#registrar');
 
 
+btnRegistrar.addEventListener('click',function(){
+    var obj = {
+        nombre : document.querySelector('#titulo').value,
+        precio : document.querySelector('#precio').value,
+        imagen : document.querySelector('#url').value
+    }
+    agregarProducto(obj);
+});
+
+function agregarProducto(objeto){
+    var contenedor = document.createElement('div');
+    contenedor.setAttribute('class','item');
+    productos.append(contenedor);
+
+    var img = document.createElement('img');
+    img.setAttribute('src',objeto.imagen);
+    contenedor.appendChild(img);
+
+    var precio = document.createElement('h4');
+    precio.textContent = '$' + objeto.precio;
+    contenedor.appendChild(precio);
+
+    var titulo = document.createElement('p');
+    titulo.textContent = objeto.nombre;
+    contenedor.appendChild(titulo);
+
+    let boton = document.createElement('button');
+    boton.textContent = 'Agregar';
+    contenedor.appendChild(boton);
+}

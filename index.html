@@ -3,18 +3,33 @@
     <head>
         <title>Mi sitio web</title>
         <link href="estilos/estilos.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
         <script defer src="scripts/main.js"></script>
     </head>
     <body>
-        <h1> Juega adivina el número</h1>
-        <div class = "cuerpo">
-            <p>Hemos seleccionado un número aleatorio entre 1 y 100. Fíjate si lo puedes adivinar en 10 turnos o menos. Vamos a decirte si tu número es más alto o más bajo.</p>
-            <label>Adivina el número: </label>
-            <input type="number">
-            <button id="enviar">Enviar respuesta</button>
-            <p id="intentos"></p>
-            <p id ="resultado"></p>
-        </div> 
+        <div class="header">
+            <h1>Bievenide</h1>
+        </div>
+        <div class ="agregarProductos">
+            <p>Titulo del producto: </p>
+            <input type="text" id="titulo">
+            <p>Precio del producto:</p>
+            <input type="number" id="precio"> 
+            <p>Imagen del producto (URL):</p>
+            <input type="text" id="url">
+            <button id="registrar">Registrar producto</button>
+        </div>
+        <div class="productos">
+            <div class="item">
+                <img src="https://modeloramanow.vtexassets.com/arquivos/ids/155905/maruchan_camaron-y-habanero.png?v=637638069704570000">
+                <h4>$14.51</h4>
+                <p>Sopa Maruchan Camarón y Limón Habanero</p>
+                <button>Agregar</button>
+            </div>
+            <div class="item">
+                <img src="https://www.granodeoro.com.mx/wp-content/uploads/2021/10/ACEITE-123.jpg">
+                <h4>$52.00</h4>
+                <p>Aceite 123</p>
+                <button>Agregar</button>
+        </div>
     </body>
 </html>
