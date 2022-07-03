@@ -46,5 +46,24 @@
     "title":"Coca cola botella 600ml",
     "price":13.00,
     "image":"https://www.puertaalmar.mx/wp-content/uploads/2020/04/cocacola-600ml.jpg"
+},
+{
+    "id":8,
+    "title":"Sopa Maruchan Pollo",
+    "price":13.00,
+    "image":"https://www.chedraui.com.mx/medias/4178900191-00-CH1200Wx1200H?context=bWFzdGVyfHJvb3R8MjQyODEyfGltYWdlL2pwZWd8aDAxL2gxMy84ODA0NDM0NDc3MDg2LmpwZ3xjZDc1MzA2NGViNTM2ZTkyNDVlMWY0YzkzNzQ5ZjQxNTllMmZiZGE0ZDkzMjNkNDI0YWZjNjY3MGQwYmFjY2U2"
+},
+{
+    "id":9,
+    "title":"Leche Santa Clara Deslactosada",
+    "price":26.50,
+    "image":"https://www.chedraui.com.mx/medias/7501295600157-00-CH300Wx300H?context=bWFzdGVyfHJvb3R8NzIxM3xpbWFnZS9qcGVnfGgxNy9oNTYvMTEyMTIzNzMxMzEyOTQuanBnfGQ1MTU4NGFmYWFiMGZjNGM5NTI2NTc3ZjM4YmNlMzAyYTQ2ZjNmYTQyN2I3OTdlMGI0NWU2NTZhNGZjMGI3YjI"
+},
+{
+    "id":9,
+    "title":"Aceite Cristal",
+    "price":48.00,
+    "image":"https://dqkvr1tsp2yqd.cloudfront.net/product/1-1-1-2-498/0/low-20211220022803.png"
 }
+
 ]

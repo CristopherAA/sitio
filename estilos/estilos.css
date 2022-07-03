@@ -36,7 +36,6 @@ h1{
     animation-name: bounce;
     animation-duration: 0.5s;
     animation-delay:1s;
-    
 }
 
 
@@ -177,7 +176,7 @@ h1{
 .cart-item-contador{
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: cadetblue;
     border-radius: 0.5em;
@@ -185,6 +184,7 @@ h1{
 .cart-item-contador i{
     padding-left: 0.2em;
     height: 100%;
+    text-align: center;
     width: 100%;
     font-size: larger;
 }
