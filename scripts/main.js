@@ -2,6 +2,7 @@ productos = document.querySelector('.products');
 cartContainer = document.querySelector('.cart-container');
 cartIcon = document.querySelector('.show-cart');
 
+cartContainer.style.height = window.innerHeight;
 cartContainer.addEventListener('click',hideCart);
 cartIcon.addEventListener('click',showCart);
 
@@ -36,4 +37,6 @@ function hideCart(e){
 
 function showCart(){
   cartContainer.style.display = "flex";
+  document.querySelector('body').style.height = window.innerHeight;
+  document.querySelector('body').style.overflow = 'hidden';
 }
