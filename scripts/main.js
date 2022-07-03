@@ -69,14 +69,19 @@ function addProduct(e){
     amount: 1
   }
 
-  console.log(product);
-
   if(actualCart.hasOwnProperty(product.id)){
     actualCart[product.id].amount += 1; 
   }else{
     actualCart[product.id] = { ...product};
   }
   drawCart();
+  let btnelemento = document.getElementById(index);
+  btnelemento.innerHTML = `
+        <i class="fa-solid fa-minus"></i>
+        <p>${1}</p>
+        <i class="fa-solid fa-plus"></i>
+  `;
+  btnelemento.addEventListener('click',clickedItemCart);
 }
 
 function drawCart(){
@@ -123,17 +128,25 @@ function clickedItemCart(e){
   }else if(e.target.classList.contains('fa-plus')){
     addOne(parseInt(e.target.parentElement.getAttribute('id')));
   }
+  e.stopPropagation();
 }
 
 function addOne(id){
   actualCart[id].amount++;
   drawCart();
+  principal = document.getElementById(id);
+  principal.querySelector('p').textContent = actualCart[id].amount;
 }
 
 function subOne(id){
   actualCart[id].amount--;
+  principal = document.getElementById(id);
   if(actualCart[id].amount <= 0){
     delete actualCart[id];
+    principal.innerHTML = '<h5 class="eaddcart">Agregar</h5>';
+    principal.removeEventListener('click',clickedItemCart);
+  }else{
+    principal.querySelector('p').textContent = actualCart[id].amount;
   }
   drawCart();
 }
