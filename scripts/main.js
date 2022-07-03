@@ -23,8 +23,8 @@ async function loadItems(){
     <img src="${element.image}">
     <h4>$${element.price}</h4>
     <p>${element.title}</p>
-    <div class="botonAgregar greenbtn" id="${element.id}">
-      <h5>Agregar</h5>
+    <div class="botonAgregar greenbtn eaddcart" id="${element.id}">
+      <h5 class="eaddcart">Agregar</h5>
     </div>
     `;
     productos.appendChild(div);
@@ -47,12 +47,19 @@ function showCart(){
 }
 
 function addProduct(e){
-  if(!e.target.classList.contains('botonAgregar')){
+  if(!e.target.classList.contains('eaddcart')){
+    console.log(e.target);
     return;
   }
-  item = e.target.parentElement;
-  index = e.target.getAttribute('id');
-
+  
+  if(e.target.childElementCount > 0){
+    item = e.target.parentElement;
+    index = e.target.getAttribute('id');
+  }else{
+    item = e.target.parentElement.parentElement;
+    index = e.target.parentElement.getAttribute('id');
+  }
+  
   const product = {
     id: index,
     title: item.querySelector('p').textContent,
@@ -60,6 +67,8 @@ function addProduct(e){
     image: item.querySelector('img').getAttribute('src'),
     amount: 1
   }
+
+  console.log(product);
 
   if(actualCart.hasOwnProperty(product.id)){
     actualCart[product.id].amount += 1; 

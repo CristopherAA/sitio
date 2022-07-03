@@ -75,7 +75,7 @@ h1{
 
 /*Carrito*/
 .cart-container{
-    display: flex;
+    display: none;
     justify-content: end;
     position: absolute;
     top:0;
@@ -103,7 +103,8 @@ h1{
     cursor: pointer;
 }
 .cart-products{
-    overflow: scroll;
+    overflow: auto;
+    margin-bottom: 0.5em;
 }
 .sendbtn p{
     margin-top: 0.5em;
@@ -112,7 +113,7 @@ h1{
     font-size: larger;
 }
 .sendbtn{
-    margin-top: 1em;
+    margin-top: auto;
     margin-bottom: 1em;
 }
 .cart-item{
