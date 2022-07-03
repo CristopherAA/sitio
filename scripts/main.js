@@ -1,10 +1,13 @@
 productos = document.querySelector('.products');
 cartContainer = document.querySelector('.cart-container');
 cartIcon = document.querySelector('.show-cart');
+cartItems = document.querySelector('.cart-products');
+actualCart = {};
 
 cartContainer.style.height = window.innerHeight;
 cartContainer.addEventListener('click',hideCart);
 cartIcon.addEventListener('click',showCart);
+productos.addEventListener('click',addProduct);
 
 loadItems();
 
@@ -20,7 +23,7 @@ async function loadItems(){
     <img src="${element.image}">
     <h4>$${element.price}</h4>
     <p>${element.title}</p>
-    <div class="botonAgregar greenbtn">
+    <div class="botonAgregar greenbtn" id="${element.id}">
       <h5>Agregar</h5>
     </div>
     `;
@@ -41,4 +44,45 @@ function showCart(){
   cartContainer.style.display = "flex";
   document.querySelector('body').style.height = window.innerHeight;
   document.querySelector('body').style.overflow = 'hidden';
+}
+
+function addProduct(e){
+  if(!e.target.classList.contains('botonAgregar')){
+    return;
+  }
+  item = e.target.parentElement;
+  index = e.target.getAttribute('id');
+
+  const product = {
+    id: index,
+    title: item.querySelector('p').textContent,
+    price: item.querySelector('h4').textContent,
+    image: item.querySelector('img').getAttribute('src'),
+    amount: 1
+  }
+
+  if(actualCart.hasOwnProperty(product.id)){
+    actualCart[product.id].amount += 1; 
+  }else{
+    actualCart[product.id] = { ...product};
+  }
+  drawCart();
+}
+
+function drawCart(){
+  cartItems.innerHTML = '';
+  Object.values(actualCart).forEach(element =>{
+    let div = document.createElement('div');
+    div.className ="cart-item";
+    div.innerHTML = `
+    <img src="${element.image}">
+    <div class="cart-item-info">
+        <h4>${element.title}</h4>
+        <p>Unidades:</p>
+        <p>${element.amount}</p>
+    </div>
+    `;
+    cartItems.appendChild(div);
+  })
+  
 }

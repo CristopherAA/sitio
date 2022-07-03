@@ -6,6 +6,7 @@ body{
 }
 /* -------  HEADER   ---------*/
 .header{
+    user-select: none;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -34,11 +35,11 @@ h1{
 .item{
     display:flex;
     flex-direction: column;
-    margin:2px;
+    margin:0.5em 2px;
     padding:0.5em;
     width:10%;
     border: solid 1px #000;
-    border-radius: 1%;
+    border-radius: 0.5em;
 }
 
 .item > h4{
@@ -74,7 +75,7 @@ h1{
 
 /*Carrito*/
 .cart-container{
-    display: none;
+    display: flex;
     justify-content: end;
     position: absolute;
     top:0;
@@ -101,7 +102,9 @@ h1{
     margin-right: 1em;
     cursor: pointer;
 }
-
+.cart-products{
+    overflow: scroll;
+}
 .sendbtn p{
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -109,8 +112,15 @@ h1{
     font-size: larger;
 }
 .sendbtn{
-    margin-top: auto;
+    margin-top: 1em;
     margin-bottom: 1em;
+}
+.cart-item{
+    display: flex;
+}
+.cart-item img{
+    width: 20%;
+    height: fit-content;
 }
 
 
