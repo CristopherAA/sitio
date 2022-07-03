@@ -1,0 +1,26 @@
+[
+{
+    "id":1,
+    "title":"Leche Alpura Clásica Entera 1L",
+    "price":25,
+    "image":"https://www.chedraui.com.mx/medias/7501055900039-00-CH1200Wx1200H?context=bWFzdGVyfHJvb3R8ODA4NDd8aW1hZ2UvanBlZ3xoMWUvaGQ5LzEwOTk2MzMzODA1NTk4LmpwZ3wyOWY0YzRhMmRlMDRiMjZhNTY3OThjMGQ2YmMzOTBhNzI4NjA1NTdmMTc0MGVkZjMzMGJlMjlmNTZlM2M0ZWYy"
+},
+{
+    "id":2,
+    "title":"Leche Alpura Deslactosada 1L",
+    "price":26,
+    "image":"https://www.chedraui.com.mx/medias/7501055901425-00-CH1200Wx1200H?context=bWFzdGVyfHJvb3R8NzYwODd8aW1hZ2UvanBlZ3xoNTQvaDFhLzEwOTk2MzA4NjA3MDA2LmpwZ3wwNDk0MWNiMWE0NDFmYmZhOTZmM2E1YjE4ZWNkOGQyOTgxOThiYzRhZGZlNTQyOWEzYzQ2ODM0MGQ1Nzg0ZmE0"
+},
+{
+    "id":3,
+    "title":"Sopa Maruchan Camarón y Limón Habanero",
+    "price":14.51,
+    "image":"https://modeloramanow.vtexassets.com/arquivos/ids/155905/maruchan_camaron-y-habanero.png?v=637638069704570000"
+},
+{
+    "id":4,
+    "title":"Aceite 123 1L",
+    "price":52.00,
+    "image":"https://www.granodeoro.com.mx/wp-content/uploads/2021/10/ACEITE-123.jpg"
+}
+]

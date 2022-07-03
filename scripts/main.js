@@ -1,35 +1,33 @@
-const html = document.querySelector('html');
-const productos = document.querySelector('.productos');
-const btnRegistrar = document.querySelector('#registrar');
+productos = document.querySelector('.products');
+cartContainer = document.querySelector('.cart-container');
 
+cartContainer.addEventListener('click',hideCart);
 
-btnRegistrar.addEventListener('click',function(){
-    var obj = {
-        nombre : document.querySelector('#titulo').value,
-        precio : document.querySelector('#precio').value,
-        imagen : document.querySelector('#url').value
-    }
-    agregarProducto(obj);
-});
+loadItems();
 
-function agregarProducto(objeto){
-    var contenedor = document.createElement('div');
-    contenedor.setAttribute('class','item');
-    productos.append(contenedor);
+async function loadItems(){
 
-    var img = document.createElement('img');
-    img.setAttribute('src',objeto.imagen);
-    contenedor.appendChild(img);
+  const res = await fetch('api.json');
+  const data = await res.json();
 
-    var precio = document.createElement('h4');
-    precio.textContent = '$' + objeto.precio;
-    contenedor.appendChild(precio);
+  data.forEach(element => {
+    let div = document.createElement('div');
+    div.className = "item";
+    div.innerHTML = `
+    <img src="${element.image}">
+    <h4>$${element.price}</h4>
+    <p>${element.title}</p>
+    <div class="botonAgregar greenbtn">
+      <h5>Agregar</h5>
+    </div>
+    `;
+    productos.appendChild(div);
+  });
+}
 
-    var titulo = document.createElement('p');
-    titulo.textContent = objeto.nombre;
-    contenedor.appendChild(titulo);
-
-    let boton = document.createElement('button');
-    boton.textContent = 'Agregar';
-    contenedor.appendChild(boton);
+function hideCart(e){
+  if(e.target.classList.contains('closes')){
+    cartContainer.style.display = "none";
+  }
+  e.stopPropagation();
 }
