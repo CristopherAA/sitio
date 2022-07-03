@@ -80,7 +80,7 @@ h1{
 
 /*Carrito*/
 .cart-container{
-    display: flex;
+    display: none;
     justify-content: end;
     position: absolute;
     top:0;

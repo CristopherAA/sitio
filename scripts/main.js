@@ -119,7 +119,7 @@ function precisionRound(number, precision) {
 
 function clickedItemCart(e){
   if(e.target.classList.contains('fa-minus')){
-    
+    subOne(parseInt(e.target.parentElement.getAttribute('id')));
   }else if(e.target.classList.contains('fa-plus')){
     addOne(parseInt(e.target.parentElement.getAttribute('id')));
   }
@@ -131,5 +131,6 @@ function addOne(id){
 }
 
 function subOne(id){
-
+  actualCart[id].amount--;
+  drawCart();
 }
