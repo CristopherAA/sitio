@@ -64,7 +64,9 @@ h1{
     height: 2em;
     justify-content: space-around;
 }
-
+.botonAgregar i{
+    width: 100%;
+}
 .greenbtn{
     display: flex;
     background-color: cadetblue;
@@ -174,6 +176,9 @@ h1{
     border-radius: 0.5em;
 }
 .cart-item-contador i{
+    height: 100%;
+    width: 100%;
+    background-color:blue;
     font-size: larger;
 }
 .cart-item-contador p{
