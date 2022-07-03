@@ -59,11 +59,12 @@ function addProduct(e){
     item = e.target.parentElement.parentElement;
     index = e.target.parentElement.getAttribute('id');
   }
-  
+  price = item.querySelector('h4').textContent;
+
   const product = {
     id: index,
     title: item.querySelector('p').textContent,
-    price: item.querySelector('h4').textContent,
+    price: parseFloat(price.substring(1)),
     image: item.querySelector('img').getAttribute('src'),
     amount: 1
   }
@@ -83,15 +84,34 @@ function drawCart(){
   Object.values(actualCart).forEach(element =>{
     let div = document.createElement('div');
     div.className ="cart-item";
+    let sum = element.price * element.amount;
     div.innerHTML = `
     <img src="${element.image}">
     <div class="cart-item-info">
         <h4>${element.title}</h4>
-        <p>Unidades:</p>
+        <p>Precio individual: $${element.price}</p>
+        <p>Total: $${sum}</p>
+    </div>
+    <div class="cart-item-units">
+      <div class="cart-item-contador">
+        <i class="fa-solid fa-minus"></i>
         <p>${element.amount}</p>
+        <i class="fa-solid fa-plus"></i>
+      </div>
     </div>
     `;
     cartItems.appendChild(div);
-  })
-  
+  });
+  calcTotal();
+}
+function calcTotal(){
+  let sum = 0;
+  Object.values(actualCart).forEach(element =>{
+    sum += element.price * element.amount;
+  });
+  document.querySelector('#total-amount').textContent = "$" + precisionRound(sum,2);
+}
+function precisionRound(number, precision) {
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
 }

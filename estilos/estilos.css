@@ -1,6 +1,10 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
 }
+p{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 body{
     margin: 0;
 }
@@ -28,6 +32,7 @@ h1{
 .products{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: 5em;
     margin-right: 5em;
     margin-top: 10px;
@@ -37,7 +42,7 @@ h1{
     flex-direction: column;
     margin:0.5em 2px;
     padding:0.5em;
-    width:10%;
+    width:11%;
     border: solid 1px #000;
     border-radius: 0.5em;
 }
@@ -75,7 +80,7 @@ h1{
 
 /*Carrito*/
 .cart-container{
-    display: none;
+    display: flex;
     justify-content: end;
     position: absolute;
     top:0;
@@ -98,11 +103,15 @@ h1{
     align-items: center;
     font-size: 1.5em;
 }
+.cart-header h3{
+    margin: 0.5em;
+}
 .cart-header i {
     margin-right: 1em;
     cursor: pointer;
 }
 .cart-products{
+    margin-top: 0;
     overflow: auto;
     margin-bottom: 0.5em;
 }
@@ -113,18 +122,61 @@ h1{
     font-size: larger;
 }
 .sendbtn{
-    margin-top: auto;
+    width: 100%;
     margin-bottom: 1em;
 }
+.cart-onbottom{
+    margin-top: auto;
+}
+.cart-total{
+    justify-content: space-between;
+}
+.cart-total p{
+    font-size: 1.3em;
+    font-weight: bold;
+}
 .cart-item{
+    margin-top: 0;
+    margin-bottom: 0.5em;
     display: flex;
     align-items: center;
 }
 .cart-item img{
     width: 20%;
 }
+.cart-item-info{
+    width: 50%;
+}
+.cart-item-info h4{
+    margin: 0;
+}
+.cart-item-info p{
+    margin: 0.2em 0;
+}
+.cart-item-units{
+    width: 25%;
+    margin-left: auto;
+}
+.cart-item-contador{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+    border-radius: 0.5em;
+}
+.cart-item-contador i{
+    font-size: larger;
+}
+.cart-item-contador p{
+    margin: 0.5em;
+}
 
 
+.cart-total{
+    margin-top: auto;
+    display: flex;
+}
 /* MEDIUM */
 @media (max-width: 1000px){
     .item{
@@ -145,6 +197,9 @@ h1{
     }
     .products{
         margin: 0 5%;
+    }
+    .cart{
+        padding: 0em 1em;
     }
 }
 
