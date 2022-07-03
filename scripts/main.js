@@ -64,7 +64,7 @@ function addProduct(e){
   const product = {
     id: index,
     title: item.querySelector('p').textContent,
-    price: parseFloat(price.substring(1)),
+    price: precisionRound(parseFloat(price.substring(1)),2),
     image: item.querySelector('img').getAttribute('src'),
     amount: 1
   }
@@ -84,7 +84,7 @@ function drawCart(){
   Object.values(actualCart).forEach(element =>{
     let div = document.createElement('div');
     div.className ="cart-item";
-    let sum = element.price * element.amount;
+    let sum = precisionRound(element.price * element.amount,2);
     div.innerHTML = `
     <img src="${element.image}">
     <div class="cart-item-info">
@@ -93,13 +93,14 @@ function drawCart(){
         <p>Total: $${sum}</p>
     </div>
     <div class="cart-item-units">
-      <div class="cart-item-contador">
+      <div class="cart-item-contador" id=${element.id}">
         <i class="fa-solid fa-minus"></i>
         <p>${element.amount}</p>
         <i class="fa-solid fa-plus"></i>
       </div>
     </div>
     `;
+    div.addEventListener('click',clickedItemCart);
     cartItems.appendChild(div);
   });
   calcTotal();
@@ -114,4 +115,21 @@ function calcTotal(){
 function precisionRound(number, precision) {
   var factor = Math.pow(10, precision);
   return Math.round(number * factor) / factor;
+}
+
+function clickedItemCart(e){
+  if(e.target.classList.contains('fa-minus')){
+    
+  }else if(e.target.classList.contains('fa-plus')){
+    addOne(parseInt(e.target.parentElement.getAttribute('id')));
+  }
+}
+
+function addOne(id){
+  actualCart[id].amount++;
+  drawCart();
+}
+
+function subOne(id){
+
 }
