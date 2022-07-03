@@ -4,15 +4,26 @@ html{
 body{
     margin: 0;
 }
+/* -------  HEADER   ---------*/
 .header{
+    display: flex;
+    align-items: center;
     padding: 10px;
     margin: 0px;
     border-bottom: solid 1px #000;
     text-align: center;
 }
 h1{
+    width: 90%;
     margin: 0;
 }
+.header i{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+
 
 
 /* PRODUCTOS */

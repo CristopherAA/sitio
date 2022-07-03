@@ -1,7 +1,9 @@
 productos = document.querySelector('.products');
 cartContainer = document.querySelector('.cart-container');
+cartIcon = document.querySelector('.show-cart');
 
 cartContainer.addEventListener('click',hideCart);
+cartIcon.addEventListener('click',showCart);
 
 loadItems();
 
@@ -26,8 +28,12 @@ async function loadItems(){
 }
 
 function hideCart(e){
-  if(e.target.classList.contains('closes')){
+  if(e.target.classList.contains('close-cart')){
     cartContainer.style.display = "none";
   }
   e.stopPropagation();
+}
+
+function showCart(){
+  cartContainer.style.display = "flex";
 }
