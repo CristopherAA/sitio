@@ -132,5 +132,8 @@ function addOne(id){
 
 function subOne(id){
   actualCart[id].amount--;
+  if(actualCart[id].amount <= 0){
+    delete actualCart[id];
+  }
   drawCart();
 }
