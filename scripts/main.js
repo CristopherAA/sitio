@@ -47,6 +47,8 @@ function showCart(){
 }
 
 function addProduct(e){
+  clases = cartIcon.className
+  cartIcon.className +=' bounce';
   if(!e.target.classList.contains('eaddcart')){
     console.log(e.target);
     return;

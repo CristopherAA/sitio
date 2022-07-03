@@ -30,6 +30,13 @@ h1{
 .header i{
     font-size: 1.5em;
     cursor: pointer;
+    
+}
+.bounce{
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-delay:1s;
+    
 }
 
 
@@ -215,4 +222,12 @@ h1{
         padding: 0em 1em;
     }
 }
+
+@keyframes bounce {
+    0%  {transform: translateY(0px);}
+    50% {transform: translateY(-10px);}
+    100%  {transform: translateY(0px);}
+}
+
+
 
