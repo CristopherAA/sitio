@@ -31,6 +31,8 @@ async function loadItems(){
 function hideCart(e){
   if(e.target.classList.contains('close-cart')){
     cartContainer.style.display = "none";
+    document.querySelector('body').style.overflow = '';
+    document.querySelector('body').style.height = 'auto';
   }
   e.stopPropagation();
 }
